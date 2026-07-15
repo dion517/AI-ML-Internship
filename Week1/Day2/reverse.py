@@ -5,3 +5,4 @@ while num > 0:
     reverse = reverse*10 + digit
     num = num//10
 print("Reversed number=",reverse)
+#Look into the logics
