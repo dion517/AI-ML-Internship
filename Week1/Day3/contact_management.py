@@ -108,7 +108,7 @@ def display_contacts():
         print("Email :", data["Email"])
 
 
-# ---------------- Main Menu ----------------
+# Main Menu 
 
 while True:
 

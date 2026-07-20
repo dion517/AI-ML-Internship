@@ -21,6 +21,20 @@ This repository contains all assignments and projects completed during the AI/ML
 - LCM
 - Menu-driven calculator
 
+### Day 3
+- Number statistics
+- ATM menu system
+- Electricity bill calculator
+- Password validation
+- Student grade management system
+- Employee payroll system
+- Library management system
+- Expense tracker
+- Quiz application
+- Text analyzer
+- Number statistics (including median,prime count, duplicate numbers, sorted numbers)
+- Contact management system
+
 
 
 Author: Dionne Jude Nunez
