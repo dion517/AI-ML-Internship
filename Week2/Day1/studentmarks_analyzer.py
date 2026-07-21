@@ -39,4 +39,4 @@ print("\nStudents Scoring Below 35:")
 print(below_35)
 
 print("\nPass Percentage        :", round(pass_percentage, 2), "%")
-print("Fail Percentage        :", round(fail_percentage, 2), "%")
+print("Fail Percentage        :", round(fail_percentage, 2), "%") 
