@@ -2,7 +2,8 @@ import csv
 import os
 
 
-FILE_NAME = "students.csv"
+FILE_NAME = r"C:\Users\DionneJudeNunez\Documents\AI-ML-Internship\Week1\College_management_system\students1.csv" 
+
 
 
 
