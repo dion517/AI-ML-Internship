@@ -1,0 +1,6 @@
+StudentID,Name,Age,Department,Gender,Attendance,Mark1,Mark2,Mark3,Mark4,Mark5,Average
+101,Alice,19,CSE,Female,95,88,92,90,85,91,89.2
+102,Bob,20,ECE,Male,90,75,80,78,82,79,78.8
+103,Charlie,19,CSE,Male,97,91,89,93,95,90,91.6
+104,Diana,21,EEE,Female,92,84,86,88,90,87,87.0
+105,Ethan,20,MECH,Male,88,70,72,75,78,74,73.8
