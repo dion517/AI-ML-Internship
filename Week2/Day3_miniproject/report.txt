@@ -1,0 +1,25 @@
+STUDENT PERFORMANCE REPORT
+==========================
+
+Dataset: Student Performance Dataset (Kaggle)
+
+Average Exam Score: 67.24
+Highest Exam Score: 101
+Average Attendance: 79.98%
+
+Gender Distribution:
+Male: 5052
+Female: 4948
+
+Highest Performing Motivation Level:
+High
+
+Overall Observations:
+1. Students with higher attendance generally score better in exams.
+2. Increased study hours are associated with higher exam scores.
+3. Students with high motivation levels achieve better average scores.
+4. The histogram shows that most students scored in the middle range.
+5. The heatmap indicates a positive correlation between study hours, previous scores, and exam scores.
+
+Conclusion:
+The analysis suggests that attendance, study hours, previous academic performance, and motivation level have a positive impact on students' exam scores.

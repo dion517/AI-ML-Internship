@@ -1,58 +1,87 @@
-# Import libraries
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.datasets import load_iris
 
-# Load Iris dataset
-iris = load_iris()
+# Load the Iris dataset from CSV
+df = pd.read_csv("Week2/Day3/Iris.csv")
 
-# Convert to DataFrame
-df = pd.DataFrame(iris.data, columns=iris.feature_names)
-
-# Add species names
-df["species"] = iris.target
-df["species"] = df["species"].map({
-    0: "Setosa",
-    1: "Versicolor",
-    2: "Virginica"
-})
-
+# Display first 5 rows
 print("First 5 rows of the dataset:")
 print(df.head())
 
-# 1. Pair Plot
+# Display column names
+print("\nColumn Names:")
+print(df.columns)
 
-sns.pairplot(df, hue="species")
+# ---------------------------------------------------
+# Find the species column automatically
+# ---------------------------------------------------
+species_col = None
+
+for col in df.columns:
+    if col.lower() in ["species", "variety", "class"]:
+        species_col = col
+        break
+
+if species_col is None:
+    print("Species column not found!")
+    exit()
+
+# ---------------------------------------------------
+# Pair Plot
+# ---------------------------------------------------
+sns.pairplot(df, hue=species_col)
 plt.suptitle("Pair Plot of Iris Dataset", y=1.02)
 plt.show()
 
-# 2. Heatmap
-
+# ---------------------------------------------------
+# Heatmap
+# ---------------------------------------------------
 plt.figure(figsize=(8,6))
-sns.heatmap(df.drop("species", axis=1).corr(),
-            annot=True,
-            cmap="coolwarm")
+
+numeric_df = df.select_dtypes(include="number")
+
+sns.heatmap(
+    numeric_df.corr(),
+    annot=True,
+    cmap="coolwarm"
+)
+
 plt.title("Correlation Heatmap")
 plt.show()
 
-# 3. Histogram
-
+# ---------------------------------------------------
+# Histogram
+# ---------------------------------------------------
 plt.figure(figsize=(8,5))
-sns.histplot(df["sepal length (cm)"], bins=10, kde=True)
-plt.title("Histogram of Sepal Length")
-plt.xlabel("Sepal Length (cm)")
+
+first_numeric = numeric_df.columns[0]
+
+sns.histplot(
+    df[first_numeric],
+    bins=10,
+    kde=True
+)
+
+plt.title(f"Histogram of {first_numeric}")
+plt.xlabel(first_numeric)
 plt.ylabel("Frequency")
 plt.show()
 
-# 4. Scatter Plot
-
+# ---------------------------------------------------
+# Scatter Plot
+# ---------------------------------------------------
 plt.figure(figsize=(8,6))
+
+x_col = numeric_df.columns[0]
+y_col = numeric_df.columns[2]
+
 sns.scatterplot(
-    x="sepal length (cm)",
-    y="petal length (cm)",
-    hue="species",
+    x=x_col,
+    y=y_col,
+    hue=species_col,
     data=df
 )
-plt.title("Scatter Plot of Sepal Length vs Petal Length")
+
+plt.title(f"{x_col} vs {y_col}")
 plt.show()
